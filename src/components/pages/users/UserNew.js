@@ -1,12 +1,13 @@
 import { useState } from "react"
 import axios from "axios"
+import jwt_decode from "jwt-decode"
 import { Navigate, useNavigate, Link }  from "react-router-dom"
 import jwt_decode from "jwt-decode"
 
 
 export default function UserNew({currentUser, setCurrentUser}){
 // state for the controlled form
-const [username, setUsername] =useState("")
+const [name, setName] =useState("")
 const [email, setEmail]= useState("")
 const [password, setPassword] = useState ("")
 const [msg, setMsg] = useState(" ")
@@ -18,13 +19,15 @@ const handleSubmit = async e =>{
     try{
         // posts form body to the backend server
         const reqBody = {
-            username, 
+            name, 
             email,
             password
         }
+
         console.log('BANANA', reqBody)
         const response = await axios.post('http://localhost:8000/api/user/', reqBody)
         // got to user profile page
+
         const { token } = response.data
         localStorage.setItem("jwt", token)
         // decode the token
@@ -32,6 +35,8 @@ const handleSubmit = async e =>{
         // set the user in Apps state to be the decoded token
         setCurrentUser(decoded)
         // got to user profile page
+
+        navigate("/")
     }catch(err){
         console.warn(err)
         if(err.response){
@@ -40,7 +45,6 @@ const handleSubmit = async e =>{
             }
         }
     }
-    navigate("/")
 }
 
 // render a navigate component if user is already logged in 
@@ -54,14 +58,14 @@ const handleSubmit = async e =>{
             <p> {msg}</p>
 
             {/* new user form */}
-            <form onSubmit={handleSubmit} >
-                <label htmlFor="username"> <h2>username:</h2></label>
+            <form >
+                <label htmlFor="name" > <h2>Name:</h2></label>
                     <input 
                         type = "text"
-                        id = "username"
-                        placeholder = "Enter your username"
-                        onChange = {e=> setUsername(e.target.value)}
-                        value = {username}
+                        id = "name"
+                        placeholder = "Enter your name"
+                        onChange = {e=> setName(e.target.value)}
+                        value = {name}
                         required
                     />
                 <label htmlFor="email"> <h2>Email:</h2></label>
@@ -82,7 +86,7 @@ const handleSubmit = async e =>{
                         value = {password}
                         required
                     />
-                <button type="submit" className="bg-sky-500 hover:bg-sky-700 ..."><h2>Register</h2></button>
+                <button type="submit" class="bg-sky-500 hover:bg-sky-700 ..."><h2>Register</h2></button>
             </form>
 
             <div>
