@@ -46,16 +46,21 @@ input[type=text] {
   box-sizing: border-box;
   text-align: center;
 }
+.pass {
+  margin: 0px 115px 0px 0px;
+}
+.pass2{
+  margin: 0px 100px 0px 0px;
+}
 button[type=submit] {
-  width: 30%;
   background-color: rgb(83, 204, 150);
   color: white;
   padding: 14px 20px;
-  margin: 8px 10px 10px 10px;
-  flex-wrap: wrap;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  display: flexbox;
+  
 }
 button {
   /* width: 20%; */

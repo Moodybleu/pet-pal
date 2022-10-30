@@ -24,6 +24,7 @@ const handleSubmit = async e =>{
         }
         console.log('BANANA', reqBody)
         const response = await axios.post('http://localhost:8000/api/user/', reqBody)
+        console.log('HEIDI',response.data)
         // got to user profile page
         const { token } = response.data
         localStorage.setItem("jwt", token)
@@ -73,7 +74,7 @@ const handleSubmit = async e =>{
                         value = {email}
                         required
                         />
-                <label htmlFor="password"> <h2>Password:</h2></label>
+                <label  className='pass' htmlFor="password"> <h2>Password:</h2></label>
                     <input 
                         type = "text"
                         id = "password"
