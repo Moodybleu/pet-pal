@@ -1,4 +1,4 @@
-import "./styles.css";
+// import './App.css';
 import { useState } from "react";
 import {
   animated,
@@ -8,7 +8,7 @@ import {
   useChain
 } from "react-spring";
 
-function checkbox() {
+function Checkbox() {
   const [isChecked, setIsChecked] = useState(false);
   const checkboxAnimationRef = useSpringRef();
   const checkboxAnimationStyle = useSpring({
@@ -64,7 +64,7 @@ function checkbox() {
           strokeDashoffset={checkmarkAnimationStyle.x}
         />
       </animated.svg>
-      Don't you dare to check me!
+     I fed my pets
     </label>
   );
 }
