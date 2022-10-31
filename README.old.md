@@ -12,7 +12,7 @@ Our general approach was for Michelle to take on making the backend and I(Megan)
 
 ## Installation instruction
 1. Fork and clone repository
-2 .In your terminal run npm i (this will install all dependancies)
+2. In your terminal run npm i (this will install all dependancies)
 (if they're not there, touch a .gitignore file and add your node_modules folder)
 3. Run NPM start and start your coding 
 
