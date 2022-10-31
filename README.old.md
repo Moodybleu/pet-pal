@@ -8,7 +8,7 @@
 - Css
 
 ## Approach
-Our general approach was for Michelle to take on making the backend and I(Megan) made the frontend. We planned out a couple files for each day and tried to implement them. We wanted it to be a single page app, so the user didn't have to click around to enter tehir data.
+Our general approach was for Michelle to take on making the backend and I(Megan) made the frontend. We planned out a couple files for each day and tried to implement them. We wanted it to be a single page app, so the user didn't have to click around to enter their data.
 
 ## Installation instruction
 1. Fork and clone repository
